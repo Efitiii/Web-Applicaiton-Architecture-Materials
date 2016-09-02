@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>3LS_StarBucks_Layer3</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>AuthenticationServlet</servlet-name>
+    <servlet-class>mum.edu.cs.AuthenticationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthenticationServlet</servlet-name>
+    <url-pattern>/action/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdviceServlet</servlet-name>
+    <servlet-class>mum.edu.cs.AdviceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdviceServlet</servlet-name>
+    <url-pattern>/action/advice</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>version</param-name>
+    <param-value>dev</param-value>
+  </context-param>
+  <listener>
+    <listener-class>
+			mum.edu.listener.StarbucksContextListener 
+		</listener-class>
+  </listener>
+</web-app>
